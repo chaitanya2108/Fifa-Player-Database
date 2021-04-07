@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%>
+  <div class="container">
+
+    <% pdetails.forEach(function(player) { %>
+
+
+        <img class="image-box" src=<%= player.image %>>
+        <p><a href="/player/<%= player._id %>"><%= player.name %></a></p>
+      <hr class = "line">
+
+
+   <% }) %>
+  </div>
+
+  <div class="">
+    <a href="/Insert" class="btn btn-primary my-2">Insert New player Details</a>
+  </div>
+<%- include("partials/footer"); -%>

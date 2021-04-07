@@ -1,0 +1,40 @@
+<%- include("partials/header"); -%>
+<div class="topleft">
+  <h1><u><%= info.name %></u></h1>
+  <img src=<%= info.image %> style="width:412px;height:412px;">
+</div>
+<div class="right">
+  <p>Age: <%= info.age %></p>
+  <p>Nationality: <%= info.nationality %></p>
+</div>
+<div class="container down">
+  <h1 class="detail-heading"><u>Player Stats:-</u></h1>
+  <p class="detail-size">Dribbling: <%= info.stats.dribbling %></p>
+  <p>Penalties: <%= info.stats.penalties %></p>
+  <p>Goals: <%= info.stats.goals %></p>
+  <h1 class="detail-heading"><u>Player Club Details:-</u></h1>
+  <p>Club name: <%= info.club.club %></p>
+  <p>Nationality: <%= info.club.nationality %></p>
+  <p>Coach: <%= info.club.coach %></p>
+  <h1 class="detail-heading"><u>Player Salary Details:-</u></h1>
+  <p>Wage: <%= info.wage.wage %></p>
+  <p>Networth: <%= info.wage.networth %></p>
+  <h1 class="detail-heading"><u>Player Health Details:-</u></h1>
+  <p>Stamina: <%= info.health.stamina %></p>
+  <p>Strength: <%= info.health.strength %></p>
+  <p>Injuries: <%= info.health.injuries %></p>
+</div>
+<form class=" " action="/delete" method="post">
+  <div class="delete">
+  <button onclick="success()" class="btn btn-danger" type="submit" name="submit" value="<%=info._id %>">Delete</button>
+  <a href="/update/<%= info._id %>" class="btn btn-info" type="submit" name="update">Update</a>
+  </div>
+</form>
+
+<script>
+  function success(){
+    swal("Wohoo!", "successfully deleted", "success")
+  }
+</script>
+
+<%- include("partials/footer"); -%>
